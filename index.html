@@ -10,6 +10,7 @@
 	<!--Preview-->
     <meta property="og:title" content="LISTA E | IIIUC" />
     <meta property="og:description" content="LISTA E | Excelência da investigação e inovação: reforçar e ampliar o IIIUC"/>
+    <meta property="og:image" content="../images/preview.png" />
 	<!--Font-->
 	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -85,7 +86,7 @@
         }
 
         .navbar-menu li {
-            margin-left: 1rem;
+            margin: 0.5rem 1rem 0.5rem 0;
         }
 
         .navbar-menu a {
@@ -103,13 +104,24 @@
             flex-direction: column;
             cursor: pointer;
         }
+        .navbar-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 5px);
+        }
 
-        .bar {
+        .navbar-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+        }
+
+        .navbar-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(10px, -5px);
+        }
+        .navbar-toggle .bar {
             height: 3px;
             width: 25px;
             background-color: white;
             margin: 4px 0;
             transition: 0.4s;
+            transform-origin: center;
         }
 
         @media (max-width: 768px) {
@@ -186,54 +198,6 @@
             background-color: #6F9598;
         }
 
-        /* MOBILE NAVIGATION */
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: white;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                background-color: #6F7E5C;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                padding: 2rem;
-                display: none;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-        }
-        .navbar-toggle.open .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .navbar-toggle.open .bar:nth-child(2) {
-        opacity: 0;
-        }
-
-        .navbar-toggle.open .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-        }
-        .navbar-toggle .bar {
-            height: 3px;
-            width: 25px;
-            background-color: white;
-            margin: 4px 0;
-            transition: 0.4s;
-            transform-origin: center;
-        }
-    
         .section-candidates ul {
           list-style: none;
           padding: 0;
@@ -296,7 +260,7 @@
             line-height: 1.6;
             background: #f9f9f9;
             border-left: 4px solid #6F9598;
-            padding: 1rem 1rem 1rem 2.5rem;
+            padding: 1rem;
             border-radius: 6px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             transition: background 0.3s;
@@ -325,6 +289,7 @@
             justify-content: space-between;
             align-items: flex-start;
             gap: 2rem;
+            margin: 2rem;
         }
 
         .footer-column {
@@ -549,7 +514,7 @@
     </section>
 
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="footer-container"> 
             <div class="footer-column footer-left">
                 <h4><a href="#titulo">LISTA E</a></h4>
                 <p>Excelência da investigação e inovação:<br>Reforçar e ampliar o IIIUC</p>
