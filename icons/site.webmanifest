@@ -3,13 +3,13 @@
   "short_name": "LISTA E",
   "icons": [
     {
-      "src": "/icons/favicon.ico/web-app-manifest-192x192.png",
+      "src": "https://github.com/listaeiiiuc/listaeiiiuc.github.io/blob/7697dc4f51fdfbb39553427955fa452b26426a1c/icons/favicon.ico/web-app-manifest-192x192.png?raw=true",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icons/favicon.ico/web-app-manifest-512x512.png",
+      "src": "https://github.com/listaeiiiuc/listaeiiiuc.github.io/blob/7697dc4f51fdfbb39553427955fa452b26426a1c/icons/favicon.ico/web-app-manifest-512x512.png?raw=true",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
