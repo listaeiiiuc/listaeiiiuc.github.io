@@ -33,38 +33,105 @@
             background: #f8f9fa;
         }
 
-        /* NAVIGATION BAR */
-        header {
-            background-color: #6F7E5C;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        h4 {
+            margin: 0; 
+            color:#fff; 
+            border-left: 5px solid #6F9598;
+            padding-left: 10px;
+        }
+        h4 a {
+            color: #fff;
+            text-decoration: none;
+        }
+        h4 a:hover {
+            color: #ccc;
         }
 
-        nav {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: #6F7E5C;
+            padding: 0.5rem 2rem;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+            
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
+        .navbar-left {
+            flex: 1;
         }
 
-        nav a {
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #ffcc00;
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin-left: 1rem;
+        }
+
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .navbar-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #6F7E5C;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                text-align: right;
+                padding-right: 1rem;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-toggle {
+                display: flex;
+            }
         }
 
         /* TITLE SECTION */
@@ -147,6 +214,25 @@
                 display: block;
             }
         }
+        .navbar-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .navbar-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+        }
+
+        .navbar-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .navbar-toggle .bar {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+            transform-origin: center;
+        }
     
         .section-candidates ul {
           list-style: none;
@@ -215,14 +301,6 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             transition: background 0.3s;
         }
-        /*
-        .principles li::before {
-            content: "✴";
-            position: absolute;
-            left: 1rem;
-            color: #cc0000;
-            font-size: 1.2rem;
-        }*/
 
         h3 {
             font-size: 1.4rem;
@@ -231,22 +309,111 @@
             border-bottom: 2px solid #6F9598;
             padding: 1rem 0.5rem;
         }
+
+        /********* FOOTER STYLES *********/
+        .site-footer {
+            background-color: #6F7E5C;
+            color: white;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-left h4 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .footer-left h4 a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer-left h4 a:hover {
+            color: #ccc;
+        }
+
+
+
+        .footer-center ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-center ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-center ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-right h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-right p {
+            margin: 0.3rem 0;
+        }
+
+        .footer-right a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
       </style>
 </head>
 <body>
     <header>
-        <nav>
-            <span class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</span>
-            <ul>
-                <li><a href="#titulo">Início</a></li>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h4><a href="#titulo" class="navbar-brand">LISTA E</a></h4>
+            </div>
+            <div class="navbar-toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#principios">Princípios</a></li>
                 <li><a href="#efetivos">Efetivos/as</a></li>
                 <li><a href="#suplentes">Suplentes</a></li>
                 <li><a href="#subscritores">Subscritores/as</a></li>
-                <li><a href="#contactos">Contactos</a></li>
+                <li><a href="#contactos">Contactos</a></li> 
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <section id="titulo">
@@ -260,7 +427,7 @@
 
     <section id="sobre">
         <div class="section-vote">
-            <h2></h2>
+            <h2>Quem Somos?</h2>
             <p>Somos docentes e investigadores/as que mantém viva a vontade de contribuir para um IIIUC mais autónomo e se mobiliza na defesa do Conselho Científico do IIIUC como um órgão eficaz, efetivo e dialogante, capaz de criar convergências e contribuir, de forma decisiva, para a definição da estratégia de investigação e inovação da UC.</p>
             <div class="button-div"><a class="cta-button" href="https://www.uc.pt/site/assets/files/956403/programa_lista_e.pdf" target="_blank" rel="noopener">Consultar Programa Completo</a></div>
             <p class="highlight">No próximo 23 de fevereiro, vote! Esperamos contar com a sua confiança.</p>
@@ -381,10 +548,43 @@
         </div>
     </section>
 
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column footer-left">
+                <h4><a href="#titulo">LISTA E</a></h4>
+                <p>Excelência da investigação e inovação:<br>Reforçar e ampliar o IIIUC</p>
+            </div>
+            <div class="footer-column footer-center">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#principios">Princípios</a></li>
+                    <li><a href="#efetivos">Efetivos/as</a></li>
+                    <li><a href="#suplentes">Suplentes</a></li>
+                    <li><a href="#subscritores">Subscritores/as</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-right">
+                <h4>Contactos</h4>
+                <p>Luís Rama<br><a href="mailto:luisrama@fcdef.uc.pt">luisrama@fcdef.uc.pt</a></p>
+                <p>Sílvia Barbeiro<br><a href="mailto:silvia@mat.uc.pt">silvia@mat.uc.pt</a></p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        document.querySelectorAll('nav a').forEach(link => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.navbar-menu');
+        const bars = mobileMenu.querySelectorAll('.bar');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.navbar-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                document.querySelector('nav ul').classList.remove('show');
+            navMenu.classList.remove('active');
+            mobileMenu.classList.remove('open');
             });
         });
     </script>
