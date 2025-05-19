@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+	<!--Title-->
+	<title>LISTA E | IIIUC</title>
+	<!--Encoding-->
+	<meta charset="UTF-8">
+	<!--Responsive-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Preview-->
+    <meta property="og:title" content="LISTA E | IIIUC" />
+    <meta property="og:description" content="LISTA E | Excelência da investigação e inovação: reforçar e ampliar o IIIUC"/>
+	<!--Font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<!--CSS-->
+    <style>
+        /* Reset some defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        /* NAVIGATION BAR */
+        header {
+            background-color: #6F7E5C;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* TITLE SECTION */
+        .section-title {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #f4f4f4;
+        }
+
+        .section-title h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #6F7E5C;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+            color: #444;
+        }
+
+        /* CONTENT SECTIONS */
+        section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #6F7E5C;
+            margin-bottom: 1rem;
+
+            border-left: 5px solid #6F9598;
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+
+        .button-div {
+            text-align: center;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #6F7E5C;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem;
+        }
+        .cta-button:hover {
+            background-color: #6F9598;
+        }
+
+        /* MOBILE NAVIGATION */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                background-color: #6F7E5C;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 2rem;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+        }
+    
+        .section-candidates ul {
+          list-style: none;
+          padding: 0;
+        }
+    
+        .section-candidates li {
+          background: #fff;
+          border-radius: 8px;
+          padding: 15px;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+    
+        .section-candidates img {
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+          border-radius: 50%;
+          margin-right: 15px;
+          border: 2px solid #ccc;
+        }
+    
+        .section-candidates strong {
+          font-size: 1.1em;
+          color: #333;
+        }
+    
+        .section-candidates em {
+          color: #777;
+          font-size: 0.95em;
+        }
+    
+        .candidate-info {
+          display: flex;
+          flex-direction: column;
+        }
+    
+        @media (max-width: 600px) {
+          .section-candidates li {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+    
+          .section-candidates img {
+            margin-bottom: 10px;
+          }
+        }
+
+        .principles {
+            list-style: none;
+            padding-left: 0;
+            margin: 2rem;
+        }
+
+        .principles li {
+            position: relative;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            background: #f9f9f9;
+            border-left: 4px solid #6F9598;
+            padding: 1rem 1rem 1rem 2.5rem;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: background 0.3s;
+        }
+
+        .principles li::before {
+            content: "✴";
+            position: absolute;
+            left: 1rem;
+            color: #cc0000;
+            font-size: 1.2rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #6F9598;
+            border-bottom: 2px solid #6F9598;
+            padding: 1rem 0.5rem;
+        }
+      </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</span>
+            <ul>
+                <li><a href="#titulo">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#principios">Princípios</a></li>
+                <li><a href="#efetivos">Efetivos/as</a></li>
+                <li><a href="#suplentes">Suplentes</a></li>
+                <li><a href="#subscritores">Subscritores/as</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="titulo">
+        <div class="section-title">
+            <h1>LISTA E</h1>
+            <h2>Excelência da investigação e inovação: reforçar e ampliar o IIIUC</h2>
+            <p><strong>Eleições:</strong> 23 de fevereiro</p>
+            <p><strong>Conselho Científico</strong><br>Instituto de Investigação Interdisciplinar<br>Universidade de Coimbra</p>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="section-vote">
+            <p>Somos docentes e investigadores/as que mantém viva a vontade de contribuir para um IIIUC mais autónomo e se mobiliza na defesa do Conselho Científico do IIIUC como um órgão eficaz, efetivo e dialogante, capaz de criar convergências e contribuir, de forma decisiva, para a definição da estratégia de investigação e inovação da UC.</p>
+            <div class="button-div"><a class="cta-button" href="https://www.uc.pt/site/assets/files/956403/programa_lista_e.pdf" target="_blank" rel="noopener">Consultar Programa Completo</a></div>
+            <p class="highlight">No próximo 23 de fevereiro, vote! Esperamos contar com a sua confiança.</p>
+        </div>
+    </section>
+
+    <section id="principios">
+        <h2>Objetivos e Princípios</h2>
+        <p>Queremos contribuir para a discussão da reforma em curso dos estatutos da UC, defendendo que a competência para eleger o/a Diretor/a deve ser do IIIUC.</p>
+        <p>Queremos a criação de um Gabinete de Gestão de Carreira, que enquadre a definição de um Plano Individual de Carreira para todos/as os/as investigadores/as, apoiando-os/as na definição do seu futuro.</p>
+        <h3>Conjunto de princípios estruturantes e de desenvolvimento estratégico</h3>
+        <ul class="principles">
+            <li>Uma Universidade centrada na Investigação e na Inovação;</li>
+            <li>O reforço e a ampliação do IIIUC como meio de integração e coordenação da investigação da UC, com o objetivo de reforçar a excelência;</li>
+            <li>A defesa da valorização e do reconhecimento dos docentes e investigadores/as, do seu plano individual de carreira, bem como fomento da internacionalização dos projetos e da formação avançada;</li>
+            <li>A responsabilidade social da investigação e dos/as investigadores/as, não só porque contribuem para o desenvolvimento social e económico da região e do país, mas também porque a divulgação e comunicação das suas atividades contribui para a valorização da investigação por parte da sociedade civil;</li>
+            <li>A defesa do Conselho Científico como um órgão eficaz, efetivo e dialogante, capaz de criar convergências e contribuir, de forma decisiva, para a definição da estratégia de investigação e inovação da UC;</li>
+            <li>A visão do IIIUC como uma unidade de ensino e de investigação de pleno direito, com autonomia de organização, gestão e direção à semelhança das demais unidades orgânicas.</li>
+        </ul>
+    </section>
+
+    <section id="efetivos">
+        <div class="section-candidates">
+          <h2>Candidatos/as Efetivos/as</h2>
+          <ul>
+            <li><div class="candidate-info"><strong>Sílvia Alexandra Alves Barbeiro</strong><em>CMUC</em></div></li>
+            <li><div class="candidate-info"><strong>Luís Manuel Pinto Lopes Rama</strong><em>CIDAF</em></div></li>
+            <li><div class="candidate-info"><strong>Susana Maria Aires de Sousa</strong><em>IJ</em></div></li>
+            <li><div class="candidate-info"><strong>João José Oliveira Malva</strong><em>CIBB</em></div></li>
+            <li><div class="candidate-info"><strong>Joana Cardoso da Costa</strong><em>CFE</em></div></li>
+            <li><div class="candidate-info"><strong>Miguel de Sá e Sousa de Castelo Branco</strong><em>CIBIT</em></div></li>
+            <li><div class="candidate-info"><strong>Marta Maria de Oliveira Pacheco de Araújo</strong><em>CES</em></div></li>
+            <li><div class="candidate-info"><strong>Ernesto Jorge Fernandes Costa</strong><em>CISUC</em></div></li>
+            <li><div class="candidate-info"><strong>Cristina Maria Proença Padez</strong><em>CIAS</em></div></li>
+            <li><div class="candidate-info"><strong>Alexandre Miguel Cardoso Soveral Martins</strong><em>IJ</em></div></li>
+            <li><div class="candidate-info"><strong>Ana Maria Miranda Botelho Teixeira</strong><em>CIDAF</em></div></li>
+            <li><div class="candidate-info"><strong>Hugo Agostinho Machado Fernandes</strong><em>CIBB</em></div></li>
+            <li><div class="candidate-info"><strong>Rita Pinheiro Garcia</strong><em>ADAI</em></div></li>
+            <li><div class="candidate-info"><strong>Sérgio Paulo Jorge Rodrigues</strong><em>CQC</em></div></li>
+            <li><div class="candidate-info"><strong>Maria de Fátima Grilo Velez de Castro</strong><em>CEIS20</em></div></li>
+            <li><div class="candidate-info"><strong>Rui Miguel Curado da Silva</strong><em>LIP</em></div></li>
+            <li><div class="candidate-info"><strong>Maria João Teixeira Gomes Alves</strong><em>CEBER</em></div></li>
+            <li><div class="candidate-info"><strong>João Pedro Amaral Cabouco Rodrigues</strong><em>CES</em></div></li>
+            <li><div class="candidate-info"><strong>Carlota Isabel Leitão Pires Simões</strong><em>CFisUC</em></div></li>
+            <li><div class="candidate-info"><strong>Helder de Jesus Araújo</strong><em>ISR</em></div></li>
+            <li><div class="candidate-info"><strong>Maria Alexandra Albuquerque Faria Pais</strong><em>CITEUC</em></div></li>
+            <li><div class="candidate-info"><strong>Rui Pedro Mexia Lobo</strong><em>CES</em></div></li>
+            <li><div class="candidate-info"><strong>Cidália Maria Parreira da Costa Fonte</strong><em>INESCC</em></div></li>
+            <li><div class="candidate-info"><strong>Sérgio Emanuel Dias Branco</strong><em>CEIS20</em></div></li>
+          </ul>
+        </div>
+    </section>
+
+    <section id="suplentes">
+    <div class="section-candidates">
+        <h2>Candidatos/as Suplentes</h2>
+        <ul>
+        <li><div class="candidate-info"><strong>João Carlos Simões dos Reis</strong><em>IJ</em></div></li>
+        <li><div class="candidate-info"><strong>Joana Maria Pina Cabral Matos Dias</strong><em>INESCC</em></div></li>
+        <li><div class="candidate-info"><strong>Nuno António Marques Lourenço</strong><em>CISUC</em></div></li>
+        <li><div class="candidate-info"><strong>Rute Isabel Fernandes Soares</strong><em>CELGA-ILTEC</em></div></li>
+        <li><div class="candidate-info"><strong>Miguel Gonçalo Cardina Codinha</strong><em>CES</em></div></li>
+        <li><div class="candidate-info"><strong>Dina Sofia das Neves Sebastião</strong><em>CEIS20</em></div></li>
+        <li><div class="candidate-info"><strong>Osvaldo Manuel Alves Pereira Silvestre</strong><em>CLP</em></div></li>
+        <li><div class="candidate-info"><strong>Sónia Mariza Florêncio Fidalgo</strong><em>IJ</em></div></li>
+        <li><div class="candidate-info"><strong>Fernando Jorge Penousal Martins Machado</strong><em>CISUC</em></div></li>
+        <li><div class="candidate-info"><strong>Maria Helena Almeida Vieira Alberto</strong><em>CFisUC</em></div></li>
+        <li><div class="candidate-info"><strong>Lino da Silva Ferreira</strong><em>CIBB</em></div></li>
+        <li><div class="candidate-info"><strong>Cláudia Pato de Carvalho</strong><em>CES</em></div></li>
+        </ul>
+    </div>
+    </section>
+
+    <section id="subscritores">
+    <div class="section-candidates">
+        <h2>Subscritores/as</h2>
+        <ul>
+        <li><div class="candidate-info"><strong>Adérito Luís Martins Araújo</strong><em>CMUC</em></div></li>
+        <li><div class="candidate-info"><strong>Ana Teresa Fernandes Peixinho de Cristo</strong><em>CEIS20</em></div></li>
+        <li><div class="candidate-info"><strong>Antero José Pena Afonso de Abrunhosa</strong><em>CIBIT</em></div></li>
+        <li><div class="candidate-info"><strong>António do Carmo Gouveia</strong><em>CFE</em></div></li>
+        <li><div class="candidate-info"><strong>António Francisco Rosa Gomes Ambrósio</strong><em>CIBB</em></div></li>
+        <li><div class="candidate-info"><strong>António Manuel Santos Carriço Portugal</strong><em>CFE</em></div></li>
+        <li><div class="candidate-info"><strong>Carlos Miguel Baptista Ferreira</strong><em>ADAI</em></div></li>
+        <li><div class="candidate-info"><strong>Daniel Alexandre Peralta Marques Pinto</strong><em>CMUC</em></div></li>
+        <li><div class="candidate-info"><strong>Duarte Nuno Pessoa Vieira</strong><em>CIBB</em></div></li>
+        <li><div class="candidate-info"><strong>Fernando Amílcar Bandeira Cardoso</strong><em>CISUC</em></div></li>
+        <li><div class="candidate-info"><strong>Henrique Santos do Carmo Madeira</strong><em>CISUC</em></div></li>
+        <li><div class="candidate-info"><strong>Hugo Miguel Borges Sarmento</strong><em>CIDAF</em></div></li>
+        <li><div class="candidate-info"><strong>João Carlos da Conceição Leal Amado</strong><em>IJ</em></div></li>
+        <li><div class="candidate-info"><strong>João Miguel Dias Ferreira Nogueira</strong><em>CMUC</em></div></li>
+        <li><div class="candidate-info"><strong>Joaquim Manuel Pires Valentim</strong><em>CINEICC</em></div></li>
+        <li><div class="candidate-info"><strong>Jorge Manuel Coutinho de Abreu</strong><em>IJ</em></div></li>
+        <li><div class="candidate-info"><strong>Lina Paula David Coelho</strong><em>CES</em></div></li>
+        <li><div class="candidate-info"><strong>Luís Pedro Chaves Rodrigues da Cunha</strong><em>IJ</em></div></li>
+        <li><div class="candidate-info"><strong>Marco Paulo Amorim Vieira</strong><em>CISUC</em></div></li>
+        <li><div class="candidate-info"><strong>Margarida Maria Lopes da Silva Camarinha</strong><em>CMUC</em></div></li>
+        <li><div class="candidate-info"><strong>Maria Clara Bicudo de Azeredo Keating</strong><em>CES</em></div></li>
+        <li><div class="candidate-info"><strong>Maria João da Silva Baila Madeira Antunes</strong><em>IJ</em></div></li>
+        <li><div class="candidate-info"><strong>Maria João Rama Seabra Santos</strong><em>CINEICC</em></div></li>
+        <li><div class="candidate-info"><strong>Paula Cristina de Oliveira Castro</strong><em>CFE</em></div></li>
+        <li><div class="candidate-info"><strong>Paulo Fernando Pereira de Carvalho</strong><em>CISUC</em></div></li>
+        <li><div class="candidate-info"><strong>Paulo Manuel David Mota Saraiva</strong><em>CMUC</em></div></li>
+        <li><div class="candidate-info"><strong>Rui César do Espírito Santo Vilão</strong><em>CFisUC</em></div></li>
+        <li><div class="candidate-info"><strong>Rui Manuel Dias Cortesão dos Santos Bernardes</strong><em>CIBIT</em></div></li>
+        <li><div class="candidate-info"><strong>Stéphane Louis Clain</strong><em>CMUC</em></div></li>
+        <li><div class="candidate-info"><strong>Susana Cláudia de Freitas Rodrigues Gonçalves</strong><em>CFE</em></div></li>
+        </ul>
+    </div>
+    </section>
+
+    <section id="contactos">
+        <h2>Contactos</h2>
+        <div class="contacts">
+            <p><strong>Representantes da Lista E às eleições para a Comissão Científica do IIIUC</strong></p>
+            <p>Luís Rama – <a href="mailto:luisrama@fcdef.uc.pt">luisrama@fcdef.uc.pt</a></p>
+            <p>Sílvia Barbeiro – <a href="mailto:silvia@mat.uc.pt">silvia@mat.uc.pt</a></p>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
